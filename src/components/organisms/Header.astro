@@ -4,25 +4,23 @@ import logoColor from "../../assets/logo_color.webp";
 import Navbar from "../molecules/Navbar";
 import NavList from "../atoms/NavList";
 import NavLink from "../atoms/NavLink";
-import HeaderButtonContactUs from "../molecules/HeaderButtonContactUs"
+import HeaderButtonContactUs from "../molecules/HeaderButtonContactUs";
 ---
 
-<header class="">
-    <Navbar>
-        <Image
-            loading={"eager"}
-            src={logoColor}
-            alt={"logo renggani karya semesta"}
-            width={120}
-            height={50}
-            class={`h-auto`}
-        />
-        <NavList>
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/service">Service</NavLink>
-            <NavLink href="/about-us">About Us</NavLink>
-            <NavLink href="/blogs">Blogs</NavLink>
-        </NavList>
-       <HeaderButtonContactUs/>
-    </Navbar>
-</header>
+<Navbar>
+    <Image
+        loading={"eager"}
+        src={logoColor}
+        alt={"logo renggani karya semesta"}
+        width={120}
+        height={50}
+        class={`h-auto`}
+    />
+    <NavList>
+        <NavLink href="/">Home</NavLink>
+        <NavLink href="/service">Service</NavLink>
+        <NavLink href="/about-us">About Us</NavLink>
+        <NavLink href="/blogs">Blogs</NavLink>
+    </NavList>
+    <HeaderButtonContactUs />
+</Navbar>
