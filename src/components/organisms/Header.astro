@@ -1,26 +1,66 @@
 ---
 import { Image } from "astro:assets";
 import logoColor from "../../assets/logo_color.webp";
+import logoWhite from "../../assets/logo_white.webp";
 import Navbar from "../molecules/Navbar";
 import NavList from "../atoms/NavList";
 import NavLink from "../atoms/NavLink";
-import HeaderButtonContactUs from "../molecules/HeaderButtonContactUs";
+import HeaderButtonContactUs from "../atoms/HeaderButtonContactUs";
+import Sidebar from "@components/molecules/Sidebar";
+const currentPath = Astro.url.pathname;
 ---
 
-<Navbar>
+<Navbar client:load>
+    <Image
+        loading={"eager"}
+        src={logoWhite}
+        alt={"logo renggani karya semesta"}
+        width={130}
+        height={51}
+        id="logo-white"
+        class={`h-auto`}
+    />
     <Image
         loading={"eager"}
         src={logoColor}
         alt={"logo renggani karya semesta"}
-        width={120}
+        width={130}
         height={51}
-        class={`h-auto`}
+        id="logo-color"
+        class={`h-auto hidden`}
     />
     <NavList>
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/service">Service</NavLink>
-        <NavLink href="/about-us">About Us</NavLink>
-        <NavLink href="/blogs">Blogs</NavLink>
+        <NavLink client:load href="/" isActive={currentPath=='/'}>Beranda</NavLink>
+        <NavLink client:load href="/services" isActive={currentPath=='/services'}>Layanan</NavLink>
+        <NavLink client:load href="/about-us">Tentang</NavLink>
+        <NavLink client:load href="/blogs">Blog</NavLink>
     </NavList>
-    <HeaderButtonContactUs />
+    <HeaderButtonContactUs client:load className="hidden lg:block" />
+    <Sidebar client:load >
+        <NavList isMobile={true}>
+            <NavLink scrolledDefault={true} client:load href="/" isActive={currentPath=='/'}>Beranda</NavLink>
+            <NavLink scrolledDefault={true} client:load href="/services" isActive={currentPath=='/services'}>Layanan</NavLink>
+            <NavLink scrolledDefault={true} client:load href="/about-us">Tentang</NavLink>
+            <NavLink scrolledDefault={true} client:load href="/blogs">Blog</NavLink>
+        </NavList>    
+        <hr class="my-10">
+        <HeaderButtonContactUs client:load className="" />
+    </Sidebar>
 </Navbar>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const logoWhite = document.getElementById("logo-white");
+        const logoColor = document.getElementById("logo-color");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+                logoColor?.classList.remove("hidden");
+                logoWhite?.classList.add("hidden");
+            } else {
+                logoWhite?.classList.remove("hidden");
+                logoColor?.classList.add("hidden");
+            }
+        });
+    });
+</script>

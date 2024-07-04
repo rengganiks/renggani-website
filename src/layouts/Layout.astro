@@ -17,7 +17,7 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
-
+        <meta name="robots" content="index, follow" />
         <!-- Meta Description -->
         <meta
             name="description"
@@ -58,7 +58,6 @@ const { title } = Astro.props;
 
     <body>
         <Header/>
-        
         <slot />
     </body>
 </html>

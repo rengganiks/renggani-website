@@ -1,0 +1,68 @@
+---
+import { Picture } from "astro:assets";
+import SwiperHomeContent from "../molecules/SwiperHomeContent";
+import banner1 from "../../assets/banner_home_1.jpg";
+import banner2 from "../../assets/banner_home_2.jpg";
+---
+
+<section>
+    <swiper-container pagination="true" effect="fade" autoplay-delay="6000" speed="1000" loop="true">
+        <swiper-slide class="relative">
+            <Picture
+                src={banner1}
+                loading={"eager"}
+                alt={"Banner Home 1 Renggani Karya Semesta"}
+                width={banner1.width}
+                height={banner1.height}
+                widths={[450, 720, banner1.width]}
+                format="webp"
+                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner1.width}px`}
+                quality={100}
+            />
+            <SwiperHomeContent
+                subtitle="Selamat Datang"
+                detail={`Kami menyediakan solusi perangkat lunak terbaik yang disesuaikan dengan kebutuhan Anda.`}
+                title="Partner Digital </br> Bisnis Anda"
+            />
+        </swiper-slide>
+        <swiper-slide class="relative">
+            <Picture
+                src={banner2}
+                loading={"eager"}
+                alt={"Banner Home 2 Renggani Karya Semesta"}
+                width={banner2.width}
+                height={banner2.height}
+                widths={[450, 720, banner2.width]}
+                format="webp"
+                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner2.width}px`}
+                quality={100}
+            />
+            <SwiperHomeContent
+                subtitle="Solusi Inovatif untuk Bisnis Anda"
+                detail={`Kami membantu bisnis Anda mencapai potensi penuh dengan solusi perangkat lunak yang efisien.`}
+                title="Efisiensi dan Produktivitas"
+            />
+        </swiper-slide>
+    </swiper-container>
+</section>
+<style lang="scss">
+    picture{
+        img{
+            @apply w-auto h-screen object-cover object-center md:w-full md:h-auto md:max-h-[650px];
+        }
+    }
+    swiper-container::part(pagination) {
+        margin-bottom: 20px;
+        @apply mx-5 lg:mx-20 text-center md:text-start;
+    }
+    swiper-container::part(bullet) {
+        background-color: white;
+        opacity: 0.8;
+        width: 100px;
+        border-radius: 10px;
+    }
+</style>
+<script>
+    import { register } from "swiper/element/bundle";
+    register();
+</script>
