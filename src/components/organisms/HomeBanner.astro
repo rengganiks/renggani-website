@@ -12,12 +12,12 @@ import banner2 from "../../assets/banner_home_2.jpg";
                 src={banner1}
                 loading={"eager"}
                 alt={"Banner Home 1 Renggani Karya Semesta"}
-                width={1250}
-                height={banner1.height}
+                width={banner1.width-500}
+                height={banner1.height-500}
                 widths={[450, 720, 1250]}
                 format="webp"
-                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, 1250px`}
-                quality={100}
+                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner1.width-500}px`}
+                quality={60}
             />
             <SwiperHomeContent
                 subtitle="Selamat Datang"
@@ -30,12 +30,12 @@ import banner2 from "../../assets/banner_home_2.jpg";
                 src={banner2}
                 loading={"eager"}
                 alt={"Banner Home 2 Renggani Karya Semesta"}
-                width={banner2.width}
-                height={banner2.height}
+                width={banner2.width-500}
+                height={banner2.height-500}
                 widths={[450, 720, banner2.width]}
                 format="webp"
-                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner2.width}px`}
-                quality={100}
+                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner2.width-500}px`}
+                quality={60}
             />
             <SwiperHomeContent
                 subtitle="Solusi Inovatif untuk Bisnis Anda"
@@ -56,6 +56,9 @@ import banner2 from "../../assets/banner_home_2.jpg";
         @apply mx-5 lg:mx-20 text-center md:text-start;
     }
     swiper-container::part(bullet) {
+        @apply bg-blue-800 opacity-70;
+    }
+    swiper-container::part(bullet-active) {
         background-color: white;
         opacity: 0.8;
         width: 100px;

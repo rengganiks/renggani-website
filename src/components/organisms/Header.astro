@@ -2,15 +2,17 @@
 import { Image } from "astro:assets";
 import logoColor from "../../assets/logo_color.webp";
 import logoWhite from "../../assets/logo_white.webp";
-import Navbar from "../molecules/Navbar";
-import NavList from "../atoms/NavList";
-import NavLink from "../atoms/NavLink";
-import HeaderButtonContactUs from "../atoms/HeaderButtonContactUs";
-import Sidebar from "@components/molecules/Sidebar";
-const currentPath = Astro.url.pathname;
+import NavList from "@components/molecules/NavList";
+import SideBar from "@components/molecules/SideBar";
+import HeaderButtonContactUs from "@components/atoms/HeaderButtonContactUs";
+const currentPathName = Astro.url.pathname
 ---
 
-<Navbar client:load>
+<nav
+    id="navbar"
+    role="navigation"
+    class={`py-3 px-5 lg:px-20 fixed top-0 left-0 right-0 z-50 flex items-center justify-between`}
+>
     <Image
         loading={"eager"}
         src={logoWhite}
@@ -18,6 +20,7 @@ const currentPath = Astro.url.pathname;
         width={130}
         height={51}
         id="logo-white"
+        quality={100}
         class={`h-auto`}
     />
     <Image
@@ -25,39 +28,29 @@ const currentPath = Astro.url.pathname;
         src={logoColor}
         alt={"logo renggani karya semesta"}
         width={130}
-        height={51}
+        height={55}
         id="logo-color"
         class={`h-auto hidden`}
     />
-    <NavList>
-        <NavLink client:load href="/" isActive={currentPath=='/'}>Beranda</NavLink>
-        <NavLink client:load href="/services" isActive={currentPath=='/services'}>Layanan</NavLink>
-        <NavLink client:load href="/about-us">Tentang</NavLink>
-        <NavLink client:load href="/blogs">Blog</NavLink>
-    </NavList>
+    <NavList client:load currentPathName={currentPathName}/>
     <HeaderButtonContactUs client:load className="hidden lg:block" />
-    <Sidebar client:load >
-        <NavList isMobile={true}>
-            <NavLink scrolledDefault={true} client:load href="/" isActive={currentPath=='/'}>Beranda</NavLink>
-            <NavLink scrolledDefault={true} client:load href="/services" isActive={currentPath=='/services'}>Layanan</NavLink>
-            <NavLink scrolledDefault={true} client:load href="/about-us">Tentang</NavLink>
-            <NavLink scrolledDefault={true} client:load href="/blogs">Blog</NavLink>
-        </NavList>    
-        <hr class="my-10">
-        <HeaderButtonContactUs client:load className="" />
-    </Sidebar>
-</Navbar>
+    <SideBar client:load currentPathName={currentPathName}/>
+</nav>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const logoWhite = document.getElementById("logo-white");
         const logoColor = document.getElementById("logo-color");
-
+        const navbar = document.getElementById("navbar");
         window.addEventListener("scroll", function () {
             if (window.scrollY > 50) {
                 logoColor?.classList.remove("hidden");
                 logoWhite?.classList.add("hidden");
+                navbar?.classList.add("bg-white");
+                navbar?.classList.remove("bg-transparent");
             } else {
+                navbar?.classList.remove("bg-white");
+                navbar?.classList.add("bg-transparent");
                 logoWhite?.classList.remove("hidden");
                 logoColor?.classList.add("hidden");
             }
