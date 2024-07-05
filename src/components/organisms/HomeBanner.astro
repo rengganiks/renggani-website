@@ -6,17 +6,25 @@ import banner2 from "../../assets/banner_home_2.jpg";
 ---
 
 <header>
-    <swiper-container pagination="true" effect="fade" autoplay-delay="6000" speed="1000" loop="true">
+    <swiper-container
+        pagination="true"
+        effect="fade"
+        autoplay-delay="6000"
+        speed="1000"
+        loop="true"
+        class="swiper-banner"
+        controller-control=".swiper-banner"
+    >
         <swiper-slide class="relative">
             <Picture
                 src={banner1}
                 loading={"eager"}
                 alt={"Banner Home 1 Renggani Karya Semesta"}
-                width={banner1.width-500}
-                height={banner1.height-500}
+                width={banner1.width - 500}
+                height={banner1.height - 500}
                 widths={[450, 720, 1250]}
                 format="webp"
-                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner1.width-500}px`}
+                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner1.width - 500}px`}
                 quality={60}
             />
             <SwiperHomeContent
@@ -30,11 +38,11 @@ import banner2 from "../../assets/banner_home_2.jpg";
                 src={banner2}
                 loading={"eager"}
                 alt={"Banner Home 2 Renggani Karya Semesta"}
-                width={banner2.width-500}
-                height={banner2.height-500}
+                width={banner2.width - 500}
+                height={banner2.height - 500}
                 widths={[450, 720, banner2.width]}
                 format="webp"
-                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner2.width-500}px`}
+                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner2.width - 500}px`}
                 quality={60}
             />
             <SwiperHomeContent
@@ -46,8 +54,8 @@ import banner2 from "../../assets/banner_home_2.jpg";
     </swiper-container>
 </header>
 <style lang="scss">
-    picture{
-        img{
+    picture {
+        img {
             @apply w-auto h-screen object-cover object-center md:w-full md:h-auto md:max-h-[650px];
         }
     }
@@ -65,7 +73,4 @@ import banner2 from "../../assets/banner_home_2.jpg";
         border-radius: 10px;
     }
 </style>
-<script>
-    import { register } from "swiper/element/bundle";
-    register();
-</script>
+

@@ -30,8 +30,8 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children,scrolledDefault=false,
       <a
         href={href}
         className={`font-medium border-2 px-7 py-3 rounded-full ${scrolled 
-          ? (`hover:text-blue-800 hover:border-blue-800 hover:bg-blue-50 
-            ${isActive ? 'text-blue-800 border-blue-800 bg-blue-50':'border-transparent text-gray-800'}`)
+          ? (`hover:text-white hover:border-blue-800 hover:bg-blue-800 
+            ${isActive ? 'text-white border-blue-800 bg-blue-800':'border-transparent text-gray-800'}`)
           : (`text-white hover:border-white hover:backdrop-blur-sm hover:bg-white/10 
             ${isActive ? 'border-white backdrop-blur-sm bg-white/10':'border-transparent'}`)} transition-all duration-300`}
       >

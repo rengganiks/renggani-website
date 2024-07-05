@@ -1,0 +1,124 @@
+---
+import { Icon } from "astro-icon/components";
+import SwiperHomeOurExcellencesContent from "@components/molecules/SwiperHomeOurExcellencesContent.astro";
+---
+
+<section class="px-5 lg:px-20 mt-10 text-gray-800">
+    <article>
+        <p
+            class="text-xs lg:text-base text-blue-800 font-medium font-roboto border-b-2 border-blue-800 inline pb-2"
+        >
+            Kelebihan Kami
+        </p>
+        <div class="flex lg:gap-10 flex-col lg:flex-row">
+            <h2 class="lg:text-4xl text-2xl font-bold font-roboto mt-2">
+                Keunggulan yang Membuat Kami Berbeda
+            </h2>
+            <p class="lg:text-lg text-sm lg:w-1/2">
+                Tim ahli kami menciptakan solusi yang disesuaikan dengan visi
+                klien dan melampaui ekspektasi mereka.
+            </p>
+        </div>
+    </article>
+    <article class="relative mt-5">
+        <div class="md:flex items-center justify-end gap-2 mb-5 hidden absolute left-0 -bottom-5">
+            <button
+                class="swiper-our-exellences-button-prev swiper-our-exellences-button"
+                aria-label="navigation swiper exellences left"
+            >
+                <Icon name="mdi:arrow-left-thin" />
+            </button>
+            <button
+                class="swiper-our-exellences-button-next swiper-our-exellences-button"
+                aria-label="navigation swiper exellences right"
+            >
+                <Icon name="mdi:arrow-right-thin" />
+            </button>
+        </div>
+        <div
+            class="absolute hidden md:block -left-2 bg-gradient-to-r from-white top-0 bottom-0 w-20 z-10"
+        >
+        </div>
+        <swiper-container class="swiper-our-exellences" init="false">
+            <SwiperHomeOurExcellencesContent
+                title="Solusi Inovatif dan Terintegrasi"
+                detail="Renggani Karya Semesta selalu mengedepankan solusi inovatif yang terintegrasi dengan teknologi terbaru. Kami memahami kebutuhan bisnis Anda dan memberikan solusi perangkat lunak yang mampu meningkatkan efisiensi serta produktivitas operasional."
+            />
+            <SwiperHomeOurExcellencesContent
+                title="Tim Ahli dan Berpengalaman"
+                detail="Dengan tim yang terdiri dari para ahli dan profesional berpengalaman di bidangnya, Renggani Karya Semesta siap membantu Anda mewujudkan ide-ide kreatif menjadi kenyataan. Kami berdedikasi untuk memberikan layanan terbaik dan memastikan setiap proyek selesai dengan hasil yang memuaskan."
+            />
+            <SwiperHomeOurExcellencesContent
+                title="Dukungan Pelanggan yang Responsif"
+                detail="Kami memberikan dukungan pelanggan yang cepat dan responsif untuk memastikan setiap kebutuhan dan masalah Anda dapat ditangani dengan segera. Layanan after-sales kami selalu siap membantu Anda agar dapat terus menggunakan produk kami dengan optimal."
+            />
+            <SwiperHomeOurExcellencesContent
+                title="Pendekatan Kolaboratif"
+                detail="Renggani Karya Semesta mengutamakan pendekatan kolaboratif dengan klien. Kami bekerja sama dengan Anda dalam setiap tahap pengembangan, mulai dari perencanaan hingga implementasi, memastikan hasil akhir sesuai dengan visi dan kebutuhan bisnis Anda."
+            />
+            <SwiperHomeOurExcellencesContent
+                title="Teknologi Terdepan"
+                detail="Kami selalu menggunakan teknologi terdepan dalam setiap solusi yang kami tawarkan. Dengan memanfaatkan alat dan platform terbaru, kami memastikan bahwa solusi perangkat lunak yang Anda terima adalah yang paling mutakhir dan efisien."
+            />
+        </swiper-container>
+        <div
+            class="absolute hidden md:block -right-2 bg-gradient-to-l from-white top-0 bottom-0 w-20 z-10"
+        >
+        </div>
+    </article>
+</section>
+<style lang="scss">
+    .swiper-our-exellences-button {
+        @apply bg-blue-800 text-white rounded-full shadow-lg p-4 bottom-[40%] to-cyan-700 transition-all duration-200 hover:scale-105 z-20 hidden md:block;
+        &.swiper-button-disabled {
+            @apply bg-blue-300 text-white;
+        }
+    }
+    swiper-container::part(pagination) {
+        @apply text-center md:text-start md:absolute md:left-28 md:mb-1;
+    }
+    swiper-container::part(bullet) {
+        @apply bg-blue-300 opacity-100;
+    }
+    swiper-container::part(bullet-active) {
+        opacity: 0.9;
+        width: 100px;
+        border-radius: 10px;
+        @apply bg-blue-800;
+    }
+</style>
+<script>
+    const swiperElement = document.querySelector(
+        ".swiper-our-exellences",
+    ) as HTMLElement & { initialize: () => void };
+    Object.assign(swiperElement, {
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        speed: 1000,
+        loop: true,
+        pagination: true,
+        autoplay: {
+            duration: 100,
+            enabled: true,
+        },
+        navigation: {
+            prevEl: ".swiper-our-exellences-button-prev",
+            nextEl: ".swiper-our-exellences-button-next",
+        },
+        breakpoints: {
+            550: {
+                // pagination: false,
+                loop: false,
+                spaceBetween: 30,
+                slidesPerView: 1.5,
+            },
+            1200: {
+                // pagination: false,
+                loop: false,
+                spaceBetween: 30,
+                slidesPerView: 2.5,
+            },
+        },
+    });
+    swiperElement?.initialize();
+</script>
