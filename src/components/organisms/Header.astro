@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import logoColor from "@assets/logo_color.webp";
 import logoWhite from "@assets/logo_white.webp";
 import NavList from "@components/molecules/NavList";
-// import SideBar from "@components/molecules/SideBar";
+import SideBar from "@components/molecules/SideBar";
 import HeaderButtonContactUs from "@components/atoms/HeaderButtonContactUs";
 const currentPathName = Astro.url.pathname
 ---
@@ -34,7 +34,7 @@ const currentPathName = Astro.url.pathname
     />
     <NavList client:load currentPathName={currentPathName}/>
     <HeaderButtonContactUs client:load className="hidden lg:block" />
-    <!-- <SideBar client:load currentPathName={currentPathName}/> -->
+    <SideBar client:load currentPathName={currentPathName}/>
 </nav>
 
 <script>
