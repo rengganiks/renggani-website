@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import NavList from "./NavList";
+import NavList from "@components/molecules/NavList";
 import HeaderButtonContactUs from "@components/atoms/HeaderButtonContactUs";
 interface SideBarProps{
     currentPathName:string
