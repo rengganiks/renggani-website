@@ -21,7 +21,7 @@ const currentPathName = Astro.url.pathname
         height={51}
         id="logo-white"
         quality={100}
-        class={`h-auto`}
+        class={`h-auto dark:block`}
     />
     <Image
         loading={"eager"}
@@ -30,7 +30,7 @@ const currentPathName = Astro.url.pathname
         width={130}
         height={55}
         id="logo-color"
-        class={`h-auto hidden`}
+        class={`h-auto hidden dark:hidden`}
     />
     <NavList client:load currentPathName={currentPathName}/>
     <HeaderButtonContactUs client:load className="hidden lg:block" />
@@ -47,8 +47,12 @@ const currentPathName = Astro.url.pathname
                 logoColor?.classList.remove("hidden");
                 logoWhite?.classList.add("hidden");
                 navbar?.classList.add("bg-white");
+                navbar?.classList.add("dark:bg-gray-900/50");
+                navbar?.classList.add("dark:backdrop-blur-md");
                 navbar?.classList.remove("bg-transparent");
             } else {
+                navbar?.classList.remove("dark:bg-gray-900/50");
+                navbar?.classList.remove("dark:backdrop-blur-md");
                 navbar?.classList.remove("bg-white");
                 navbar?.classList.add("bg-transparent");
                 logoWhite?.classList.remove("hidden");
