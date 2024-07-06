@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import NavList from "@components/molecules/NavList";
 import HeaderButtonContactUs from "@components/atoms/HeaderButtonContactUs";
-interface SideBarProps{
+interface SideBarMenuProps{
     currentPathName:string
 }
-const SideBar:React.FC<SideBarProps>= ({currentPathName}) => {
+const SideBarMenu:React.FC<SideBarMenuProps>= ({currentPathName}) => {
     const [isOpen, setIsOpen] = useState(false);
     const sidebarRef = useRef<HTMLDivElement>(null);
     const [scrolled, setScrolled] = useState(false);
@@ -58,4 +58,4 @@ const SideBar:React.FC<SideBarProps>= ({currentPathName}) => {
         </>
     )
 }
-export default SideBar
+export default SideBarMenu
