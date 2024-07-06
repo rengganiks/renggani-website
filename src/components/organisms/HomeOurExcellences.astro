@@ -1,20 +1,30 @@
 ---
 import { Icon } from "astro-icon/components";
+import {Image} from "astro:assets"
 import SwiperHomeOurExcellencesContent from "@components/molecules/SwiperHomeOurExcellencesContent.astro";
+import imagePolygon from "@assets/polygon.png"
 ---
 
-<section class="px-5 lg:px-20 py-10 bg-gray-50 text-gray-800 dark:text-gray-200 dark:bg-gray-900">
-    <article>
+<section class="px-5 lg:px-20 dark:z-10 py-10 bg-gray-50 text-gray-800 dark:text-gray-200 dark:bg-gray-900 relative">
+    <Image 
+    src={imagePolygon}
+    width={imagePolygon.width-100}
+    height={imagePolygon.height-100}
+    alt={`polygon`}
+    loading={'eager'}
+    class={`absolute md:right-60 right-0 z-0 opacity-30 dark:opacity-5 animate-shakeY`}
+    />
+    <article class="relative">
         <p
             class="text-xs lg:text-base dark:text-gray-200 dark:border-gray-200 text-blue-800 font-medium font-roboto border-b-2 border-blue-800 inline pb-2"
         >
             Kelebihan Kami
         </p>
-        <div class="flex lg:gap-10 flex-col lg:flex-row">
+        <div class="grid lg:grid-cols-2 lg:gap-10">
             <h2 class="lg:text-4xl text-2xl font-bold font-roboto mt-2 dark:text-white">
                 Keunggulan yang Membuat Kami Berbeda
             </h2>
-            <p class="lg:text-lg text-sm lg:w-1/2">
+            <p class="lg:text-lg text-sm">
                 Tim ahli kami menciptakan solusi yang disesuaikan dengan visi
                 klien dan melampaui ekspektasi mereka.
             </p>

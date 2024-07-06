@@ -5,6 +5,16 @@ export default {
 	darkMode:"selector",
 	theme: {
 		extend: {
+			keyframes: {
+				shakeY: {
+				  '0%, 100%': { transform: 'translateY(5%)' },
+				  '50%': { transform: 'translateY(0)' },
+				},
+			  },
+			animation:{
+				shakeY: 'shakeY 20s linear infinite',
+				'bounce-slow': 'bounce 20s linear infinite',
+			},
 			fontFamily: {
 				roboto: ['Roboto'],
 				sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
