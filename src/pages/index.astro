@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import HomeBanner from "../components/organisms/HomeBanner.astro";
 import HomeOurExcellences from "../components/organisms/HomeOurExcellences.astro";
+import HomePortfolio from "@components/organisms/HomePortfolio.astro";
 ---
 
 <Layout
@@ -9,33 +10,7 @@ import HomeOurExcellences from "../components/organisms/HomeOurExcellences.astro
 >
     <HomeBanner />
     <HomeOurExcellences />
-    <section class="min-h-[500px] backdrop-blur-md relative bg-gray-50 py-10 dark:bg-gray-900">
-        <div class="absolute h-52 from-blue-800 to-gray-50 right-0 bottom-0 blur-[180px] bg-gradient-to-tl dark:blur-[180px]  dark:to-gray-900 w-1/2"></div>
-        <div class="absolute w-64 h-52 bg-cyan-500 left-0 bottom-0 dark:hidden blur-[180px]"></div>
-        <article class="relative px-5 border-blue-100 border-b-2 pb-5 mb-5 lg:px-20">
-            <p
-                class="text-xs lg:text-base dark:text-gray-200 dark:border-gray-200 text-blue-800 font-medium font-roboto border-b-2 border-blue-800 inline pb-2"
-            >
-            Portofolio Kami
-            </p>
-            <div class="grid lg:grid-cols-2 lg:gap-10 mb-5">
-                <h2 class="lg:text-4xl text-2xl font-bold font-roboto mt-2 dark:text-white">
-                    Proyek Unggulan Kami
-                </h2>
-                <p class="lg:text-lg text-sm">
-                    Setiap proyek dirancang untuk menginspirasi dan memberikan hasil luar biasa bagi klien kami.
-                </p>
-            </div>
-            <!-- <button class="text-white px-6 py-2 rounded-full font-roboto shadow-lg bg-blue-800">Terbaru</button>
-            <button class="bg-white px-6 py-2 rounded-full font-roboto shadow-lg text-blue-800">Web Apps</button>
-            <button class="bg-white px-6 py-2 rounded-full font-roboto shadow-lg text-blue-800">Mobile Apps</button>
-            <button class="bg-white px-6 py-2 rounded-full font-roboto shadow-lg text-blue-800">Desktop Apps</button>
-            <button class="bg-white px-6 py-2 rounded-full font-roboto shadow-lg text-blue-800">Website</button>
-            <button class="bg-white px-6 py-2 rounded-full font-roboto shadow-lg text-blue-800">E-Commerce</button>
-            <button class="bg-white px-6 py-2 rounded-full font-roboto shadow-lg text-blue-800">ERP</button>
-            <button class="bg-white px-6 py-2 rounded-full font-roboto shadow-lg text-blue-800">CRM</button> -->
-        </article>
-    </section>
+    <HomePortfolio />
 </Layout>
 <script>
     import { register } from "swiper/element/bundle";

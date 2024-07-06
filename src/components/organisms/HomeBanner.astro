@@ -16,19 +16,21 @@ import banner2 from "@assets/banner_home_2.jpg";
         controller-control=".swiper-banner"
     >
         <swiper-slide class="relative">
+            
             <Picture
                 src={banner1}
                 loading={"eager"}
-                alt={"Banner Home 1 Renggani Karya Semesta"}
-                width={banner1.width - 500}
-                height={banner1.height - 500}
-                widths={[450, 720, 1250]}
+                alt={"Banner Home 1 Renggani Karya Semesta" }
+                width={720}
+                height={200}
+                widths={[450, 720]}
                 format="webp"
-                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner1.width - 500}px`}
-                quality={60}
+                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px`}
+                quality={50}
             />
+           
             <SwiperHomeContent
-                subtitle="Selamat Datang"
+                subtitle={`Selamat Datang`}
                 detail={`Kami menyediakan solusi perangkat lunak terbaik yang disesuaikan dengan kebutuhan Anda.`}
                 title="Partner Digital </br> Bisnis Anda"
             />
@@ -38,11 +40,11 @@ import banner2 from "@assets/banner_home_2.jpg";
                 src={banner2}
                 loading={"eager"}
                 alt={"Banner Home 2 Renggani Karya Semesta"}
-                width={banner2.width - 500}
-                height={banner2.height - 500}
-                widths={[450, 720, banner2.width]}
+                width={banner2.width - 1200}
+                height={banner2.height - 1200}
+                widths={[450, 720, banner2.width-800]}
                 format="webp"
-                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner2.width - 500}px`}
+                sizes={`(max-width: 425px) 450px, (max-width: 720px) 720px, ${banner2.width - 1200}px`}
                 quality={60}
             />
             <SwiperHomeContent
