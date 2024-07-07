@@ -26,10 +26,10 @@ const HasContent: React.FC<PortfolioHasContentProps> = ({ portfolios, limit, loa
     const paginateData = portfolios.slice(0, limit)
     return (
         <article className="px-5 lg:px-20 relative">
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-6 gap-5">
                 {
                     paginateData.map(item => (
-                        <div className={`shadow-lg relative overflow-hidden rounded-lg group`} key={item.slug}>
+                        <div className={`shadow-lg relative overflow-hidden rounded-lg group ${item.data.category=='Mobile Apps'?'lg:col-span-1 col-span-6':'md:col-span-3 col-span-6'}`} key={item.slug}>
                             <img src={item.data.image.src} alt={item.slug} width={item.data.image.width} height={300} className={`object-cover h-52 xl:h-72 object-top rounded-lg w-full`} />
                             <div className="absolute group-hover:max-h-full max-h-0 h-[100%] transition-all duration-500 dark:from-gray-800 from-blue-800/60 w-full bottom-0  bg-gradient-to-t dark:to-gray-900/40" />
                             <div className="absolute bottom-0 w-full min-h-full flex items-center justify-center text-center p-3 font-roboto group-hover:backdrop-blur-sm">
@@ -59,7 +59,7 @@ const PortfolioHomeContent: React.FC<PortfolioHomeContentProps> = ({ portfolios 
                     : <article className="flex items-center justify-center flex-col md:flex-row px-5 lg:px-20">
                         <img src={robotEmptyImageOptimized.src} alt="empty portfolio" width={300} height={500} className="w-40 md:w-auto" />
                         <div className="max-w-[500px] text-center md:text-left">
-                            <h3 className="text-base lg:text-xl dark:text-white font-roboto font-bold">Belum ada project unggulan</h3>
+                            <h3 className="text-base lg:text-xl dark:text-white font-roboto font-bold">Belum ada proyek unggulan</h3>
                             <p className="text-xs lg:text-base mb-3 dark:text-gray-500">Tambahkan proyek Anda ke dalam daftar unggulan kami dan buat proyek bersama kami!</p>
                             <a href="https://api.whatsapp.com/send?phone=6289512589756" target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:text-blue-700 dark:text-gray-500 dark:hover:text-gray-400  font-bold font-roboto">Buat Sekarang</a>
                         </div>
