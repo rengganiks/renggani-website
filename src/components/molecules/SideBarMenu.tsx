@@ -24,7 +24,7 @@ const SideBarMenu: React.FC<SideBarMenuProps> = ({ currentPathName }) => {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, []);
+    }, [isActive]);
     return (
         <aside className={`lg:hidden fixed z-50 flex overflow-hidden justify-end  top-0 right-0 h-screen bg-black/50 backdrop-blur-sm transition-all w-full  ${isActive ? 'max-w-full' : 'max-w-0 duration-700'}`} >
             <menu ref={sidebarRef} className={`bg-white w-[80%] ${isActive ? 'max-w-full duration-700' : 'max-w-0 duration-300 translate-x-10'} transition-all pt-10 pl-10 pr-5`}>
