@@ -21,7 +21,7 @@ const HeaderButtonContactUs: FC<HeaderButtonContactUsProps> = ({ className }) =>
         };
     }, []);
     return (
-        <a href="http://" target="_blank" rel="noopener noreferrer" aria-label="contact us" className={`relative inline-block px-6 py-3 text-blue-800 border-2 border-blue-800 dark:text-gray-500 dark:border-gray-500 transition-transform duration-500 ease-out group overflow-hidden rounded-full ${!scrolled && 'shadow-xl'} ${className}`}
+        <a href="https://api.whatsapp.com/send?phone=6289512589756" target="_blank" rel="noopener noreferrer" aria-label="contact us" className={`relative inline-block px-6 py-3 text-blue-800 border-2 border-blue-800 dark:text-gray-500 dark:border-gray-500 transition-transform duration-500 ease-out group overflow-hidden rounded-full ${!scrolled && 'shadow-xl'} ${className}`}
         >
             <span className={`absolute inset-0 w-full h-full transition-all duration-500 ease-out transform scale-0 bg-blue-800 group-hover:scale-150 dark:bg-gray-900 origin-bottom-right rounded-tl-full ${!scrolled && 'scale-150'}`}></span>
             <span className={`relative z-10 transition-colors flex items-center gap-2 duration-500 ease-out group-hover:text-white font-medium font-roboto ${!scrolled && 'text-white'}`}>
