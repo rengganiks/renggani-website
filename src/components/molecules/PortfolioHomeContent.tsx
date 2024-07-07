@@ -41,7 +41,7 @@ const HasContent: React.FC<PortfolioHasContentProps> = ({ portfolios, limit, loa
                     ))
                 }
             </div>
-            {paginateData.length < portfolios.length && <div className="flex items-center justify-center mt-5"><button className="rounded-full py-3 border-2 border-blue-800 text-blue-800 px-7 shadow-lg hover:shadow-none font-roboto hover:text-white hover:bg-blue-800 duration-500 dark:bg-gray-800 dark:text-white dark:border-gray-800 dark:hover:bg-gray-900" onClick={() => loadMore()}>Lebih Banyak</button></div>}
+            {paginateData.length < portfolios.length && <div className="flex items-center justify-center mt-5"><button className="rounded-full py-3 border-2 border-blue-800 px-7 shadow-lg hover:shadow-none font-roboto text-white bg-blue-800 duration-500 dark:bg-gray-800 dark:text-white dark:border-gray-800 dark:hover:bg-gray-900" onClick={() => loadMore()}>Lebih Banyak</button></div>}
         </article>)
 }
 const PortfolioHomeContent: React.FC<PortfolioHomeContentProps> = ({ portfolios }) => {
