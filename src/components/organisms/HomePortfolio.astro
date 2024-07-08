@@ -3,7 +3,23 @@ import { getImage } from "astro:assets";
 import PortfolioHomeContent from "@components/molecules/PortfolioHomeContent";
 import PortfolioHomeButtonCategory from "@components/atoms/PortfolioHomeButtonCategory";
 import { getCollection } from "astro:content";
-const portfolios = await getCollection("portfolios");
+const portfolios = await getCollection(
+    "portfolios",
+    async ({ data }: any) => {
+        try {
+            data.image = await getImage({
+                src: data.image,
+                format: "webp",
+                width: 500,
+                height: 500,
+                loading:'eager'
+            });
+        } catch (error) {
+            console.log(error);
+        }
+        return data;
+    },
+);
 const categories = [
     "Terbaru",
     "Web Apps",
@@ -32,9 +48,7 @@ const categories = [
         class="absolute w-64 h-52 bg-cyan-500 left-0 bottom-1/2 md:bottom-0 dark:hidden blur-[180px]"
     >
     </div>
-    <article
-        class="relative px-5 border-blue-100 dark:border-gray-700 border-b-2 mb-5 lg:px-20"
-    >
+    <article class="relative px-5 border-blue-100 dark:border-gray-700 border-b-2 mb-5 lg:px-20">
         <p
             class="text-xs lg:text-base dark:text-white dark:border-gray-200 text-blue-800 font-medium font-roboto border-b-2 border-blue-800 inline pb-2"
         >
