@@ -39,7 +39,7 @@ const HomeServiceContent = () => {
                             </svg>
                             Garansi 1 bulan</li>
                     </ul>
-                    <a href="/service" className={`flex items-center gap-2 hover:gap-3 transition-all duration-300 hover:font-semibold font-bold ${active != 'service-1' && 'lg:hidden'}`}>
+                    <a href="/services" className={`flex items-center gap-2 hover:gap-3 transition-all duration-300 hover:font-semibold font-bold ${active != 'service-1' && 'lg:hidden'}`}>
                         Pergi ke Layanan
                         <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10M6 13h8l-3.5 3.5l1.42 1.42L17.84 12l-5.92-5.92L10.5 7.5L14 11H6z"></path>
@@ -82,7 +82,7 @@ const HomeServiceContent = () => {
                             </svg>
                             Cocok untuk pengembangan fitur dan maintenance</li>
                     </ul>
-                    <a href="/service" className={`flex items-center gap-2 hover:gap-3 transition-all duration-300 hover:font-semibold font-bold ${active != 'service-2' && 'lg:hidden'}`}>
+                    <a href="/services" className={`flex items-center gap-2 hover:gap-3 transition-all duration-300 hover:font-semibold font-bold ${active != 'service-2' && 'lg:hidden'}`}>
                         Pergi ke Layanan
                         <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12A10 10 0 0 1 12 2a10 10 0 0 1 10 10M6 13h8l-3.5 3.5l1.42 1.42L17.84 12l-5.92-5.92L10.5 7.5L14 11H6z"></path>
