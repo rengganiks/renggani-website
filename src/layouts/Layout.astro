@@ -1,13 +1,13 @@
 ---
 import Header from "@components/organisms/Header.astro";
 import Footer from "@components/organisms/Footer.astro";
-import '../styles/global.css'
+import "../styles/global.css";
 interface Props {
     title: string;
-    description:string;
+    description: string;
 }
 
-const { title,description } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,28 +21,19 @@ const { title,description } = Astro.props;
         <title>{title}</title>
         <meta name="robots" content="index, follow" />
         <!-- Meta Description -->
-        <meta
-            name="description"
-            content={description}
-        />
+        <meta name="description" content={description} />
 
         <!-- Meta Keywords -->
         <meta
             name="keywords"
-            content="Renggani Karya Semesta, software house, produk software, pengembangan perangkat lunak, solusi IT, pengembangan aplikasi, software development"
+            content="pengembangan web, pengembangan perangkat lunak, software house, e-commerce, website gratis, jasa pembuatan website, pembuatan aplikasi, IT solutions, solusi teknologi, teknologi informasi, web development, software development, mobile app development, jasa IT, digital marketing, desain web, website profesional, hosting web, manajemen konten, integrasi sistem, layanan IT, Banyuwangi, Bali"
         />
 
         <!-- Open Graph Meta Tags -->
-        <meta
-            property="og:title"
-            content={title}
-        />
-        <meta
-            property="og:description"
-            content={description}
-        />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="rengganikaryasemesta.com">
+        <meta property="og:site_name" content="rengganikaryasemesta.com" />
         <meta
             property="og:url"
             content="https://www.rengganikaryasemesta.com"
@@ -55,12 +46,11 @@ const { title,description } = Astro.props;
         <!-- <script
             src="https://kit.fontawesome.com/65dbafaf47.js"
             crossorigin="anonymous"></script> -->
- 
     </head>
 
     <body>
-        <Header/>
+        <Header />
         <slot />
-       <Footer/>
+        <Footer />
     </body>
 </html>
