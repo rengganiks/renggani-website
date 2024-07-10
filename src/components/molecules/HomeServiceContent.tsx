@@ -7,14 +7,14 @@ const onDemandImageOptimized = await getImage({ src: onDemandImage, width: 400, 
 const HomeServiceContent = () => {
     const [active, setActive] = useState<string>('service-1')
     return (
-        <article className={`relative mt-5 flex flex-col gap-5 lg:gap-0 lg:flex-row dark:text-gray-500`}>
+        <article className={`relative mt-10 flex flex-col gap-5 lg:gap-0 lg:flex-row dark:text-gray-500`}>
             <div onClick={() => {
                 setActive('service-1')
             }} className={`w-full h-[400px] relative shadow-lg flex transition-all border-l-4 overflow-hidden lg:overflow-visible rounded-xl lg:rounded-l-xl bg-[#eef5f9] duration-500 dark:bg-gray-900 ${active != 'service-1' ? 'lg:max-w-52 border-gray-300 lg:text-gray-500' : 'dark:text-gray-200 max-w-full border-blue-800'}`} id="service-1">
                 <button className="absolute -left-[95px] bottom-1/2 -rotate-90 font-roboto bg-blue-800 md:text-white px-6 py-3 rounded-t-xl">SERVICE #1</button>
                 <div className={`absolute right-0 bottom-0 rounded-l-xl hidden md:block top-0 from-gray-900 ${active == 'service-1' ? 'w-1/2 bg-gradient-to-l' : 'lg:w-full w-1/2 bg-gradient-to-l lg:bg-gradient-to-b'}`}></div>
                 <div className={`p-5 font-roboto overflow-hidden ${active != 'service-1' ? 'lg:absolute lg:left-0 lg:top-0 lg:text-white' : 'relative'}`}>
-                    <h3 className="text-xl font-bold">Project Based</h3>
+                    <h3 className="text-xl font-bold uppercase">Project-Based</h3>
                     <p className={`text-sm xl:text-base mt-2 ${active != 'service-1' && 'lg:hidden'}`}>Model kerja sama Project-Based ini sangat cocok untuk proyek-proyek dengan cakupan yang jelas dan spesifikasi yang telah ditetapkan, memungkinkan kami untuk memberikan solusi yang optimal dan sesuai dengan kebutuhan klien.</p>
                     <ul className={`xl:text-base text-sm my-3 flex flex-col gap-2 ${active != 'service-1' && 'lg:hidden'}`}>
                         <li className="flex gap-5 items-center">

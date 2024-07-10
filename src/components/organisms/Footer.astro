@@ -19,12 +19,13 @@ const footerBGOptiomized = await getImage({
     <section class="bg-blue-950/90 dark:bg-blue-900/90">
         <article class="px-5 lg:px-20 py-10">
             <Image
-            loading={"eager"}
+            loading={"lazy"}
             src={logoWhite}
             alt={"logo renggani karya semesta"}
             width={220}
             height={51}
             quality={100}
+            format="webp"
             class={`h-auto dark:block`}
         />
         <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-5 font-roboto text-white mt-10">
